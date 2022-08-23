@@ -38,10 +38,15 @@ class Test_SearchCustomerByEmail_005():
         searchcust.clickSearchBTN()
         time.sleep(2)
         status = searchcust.searchCustomerByEmail('james_pan@nopCommerce.com')
-        assert True == status
+        self.driver.close()
+        # assert True == status
+        if status == True:
+            assert True
+        else:
+            assert False
         self.logger.info('***** Search customer by Email Test in Finished *****')
 
-        self.driver.close()
+
 
 
 
